@@ -31,16 +31,20 @@ app = Flask(__name__)
 def welcome():
     """Available api routes."""
     return (
-        f"Available API Routes:<br/>"
-        f"/api/v1.0/precipitation<br/>"
-        f"/api/v1.0/stations</br>"
-        f"/api/v1.0/tobs</br>"
+        "<strong>Welcome to my Honolulu, Hawaii Weather API!</strong></br>"
+        "</br>"
+        f"<em>Available API Routes:</em><br/>"
+        f"/api/v1.0/precipitation<br/>Returns all dates and amount of precipitation recorded.</br>"
+        "</br>"
+        f"/api/v1.0/stations</br>Returns a list of stations.</br>"
+        "</br>"
+        f"/api/v1.0/tobs</br>Returns a list of temperatures recorded by the most active station.</br>"
         "</br>"
         f"/api/v1.0/temp/<start></br>"
-        'Temp & Date Query (min, avg, max): After temp/[insert start date] as format "YYYY-MM-DD".</br>'
+        'Temp & Date Query (min, avg, max temps): After temp/[insert start date] as format "YYYY-MM-DD".</br>'
         "</br>"
         f"/api/v1.0/temp/<start>/<end></br>"
-        'Temp & Date Range Query (min, avg, max): After temp/[insert start date]/[insert end date] as format "YYYY-MM-DD".'
+        'Temp & Date Range Query (min, avg, max temps): After temp/[insert start date]/[insert end date] as format "YYYY-MM-DD".'
     )
 
 @app.route("/api/v1.0/precipitation")
